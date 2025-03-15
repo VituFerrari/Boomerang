@@ -1,0 +1,19 @@
+{
+  "name": "boomerang",
+  "version": "1.0.0",
+  "description": "Projeto Boomerang",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "devDependencies": {
+    "electron": "^34.1.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

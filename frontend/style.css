@@ -1,0 +1,277 @@
+/* Resetando alguns estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #6a4c9c, #0c1c40); /* Gradiente suave entre roxo e azul */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+html, body {
+    /*height: 100%;*/
+    overflow-y: auto !important; /* Garante que a rolagem está ativa */
+}
+
+/* Container principal */
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1s ease-in-out;
+    width: 90%;  /* Ajusta o tamanho do container para 90% da tela */
+    max-width: 1200px;  /* Define uma largura máxima */
+    display: flex;
+    margin: 20px auto;  /* Espaçamento nas laterais e no topo */
+    padding: 20px;  /* Espaçamento interno */
+    border-radius: 15px;  /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Sombra para dar profundidade */
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Animação de entrada da página */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Cabeçalho */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Formulário de Cadastro */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Melhorando a responsividade do formulário */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo dos campos de input */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+/* Efeito de foco nos campos de input */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border: 1px solid #6a4c9c;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Estilizando os selects, inputs de data e hora */
+select,
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    appearance: none; /* Remove o estilo padrão */
+}
+
+/* Adicionando um ícone no select */
+select {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    padding-right: 35px;
+}
+
+.select-items {
+    max-height: 200px; /* Limita o tamanho para ativar o scroll */
+    overflow-y: auto; /* Adiciona rolagem caso tenha muitas opções */
+}
+
+/* Estilizando as opções dentro do select */
+option {
+    background-color: #4b3575; /* Cor de fundo das opções */
+    color: white; /* Cor do texto */
+}
+
+option:hover {
+    background-color: #260855 !important; /* Cor quando passa o mouse */
+    color: white !important; /* Cor do texto */
+}
+
+/* Efeito ao focar nos campos */
+select:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
+    border: 1px solid #6a4c9c;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Botão de cadastro */
+button {
+    background-color: #6a4c9c;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+/* Efeito de hover no botão */
+button:hover {
+    background-color: #4b3575;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Tabela de Clientes */
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #6a4c9c;
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botões de Navegação */
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.nav-buttons button {
+    background-color: #0c1c40;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+    background-color: #4b3575;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Melhorando o modal de edição */
+.modal-content {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Estilizando o alarme */
+.alarme {
+    background-color: #f1f1f1;
+    /*border: 1px solid #ccc;*/
+    display: inline-block;
+    border-radius: 5px;
+}
+
+#alarme-container.ativo {
+    background-color: red;
+    color: white;
+}
+
+#mensagem {
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}

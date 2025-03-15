@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Lembretes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciamento de Lembretes</h1>
+        
+        <!-- Formulário de Cadastro de Lembretes -->
+        <div class="form-container">
+            <form id="formLembrete" method="POST">
+                <!--<input type="hidden" id="lembreteId">!--Apenas para manter o ID e fazer a edição do lembrete-->
+                <select id="clienteId" required>
+                    <option value="" disabled selected>Selecione um Cliente</option>
+                    <!-- Opções serão carregadas dinamicamente -->
+                </select>
+                <select id="mensagemId" required>
+                    <option value="" disabled selected>Selecione uma Mensagem</option>
+                    <!-- Opções serão carregadas dinamicamente -->
+                </select>
+                <input type="date" id="dataLembrete" required>
+                <input type="time" id="horaLembrete" value="09:00" required>
+                <button type="submit">Criar Lembrete</button>
+            </form>
+        </div>
+        
+        <!-- Alarme -->
+        <div id="alarme-container" class="alarme">
+            <h2 id="mensagem">NENHUMA NOTIFICAÇÃO ATIVA</h2>
+        </div>
+        <button id="btnAtivarAlarme">Ativar Alarme</button>
+        <audio id="alarme-som" src="./sound/alarme.mp3" preload="auto"></audio>
+
+        <!-- Tabela de Lembretes -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Mensagem</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="listaLembretes">
+                    <!-- Lembretes serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Botões de Navegação -->
+        <div class="nav-buttons">
+            <button onclick="window.location.href='index.html'">Gerenciamento de Clientes</button>
+            <button onclick="window.location.href='mensagens.html'">Gerenciamento de Mensagens</button>
+        </div>
+    </div>
+
+    <div id="modalEdicao" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Editar Lembrete</h2>
+            <form id="formModalLembrete" method="PUT">
+                <input type="hidden" id="lembreteIdModal">
+                
+                <label>Cliente:</label>
+                <select id="clienteIdModal" required></select>
+                
+                <label>Mensagem:</label>
+                <select id="mensagemIdModal" required></select>
+                
+                <label>Data:</label>
+                <input type="date" id="dataLembreteModal" required>
+                
+                <label>Hora:</label>
+                <input type="time" id="horaLembreteModal" required>
+                
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="./lembretes.js"></script>
+</html>

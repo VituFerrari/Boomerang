@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Mensagens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciamento de Mensagens</h1>
+        
+        <!-- Formulário de Cadastro de Mensagens -->
+        <div class="form-container">
+            <form id="formMensagem" method="POST">
+                <input type="text" id="titulo" placeholder="Título da Mensagem">
+                <input type="text" id="conteudo" placeholder="Digite aqui a mensagem que deseja salvar" required>
+                <button type="submit">Salvar Mensagem</button>
+            </form>
+        </div>
+        
+        <!-- Tabela de Mensagens -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Mensagens Salvas</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="listaMensagens">
+                    <!-- Mensagens serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Botões de Navegação -->
+        <div class="nav-buttons">
+            <button onclick="window.location.href='index.html'">Gerenciamento de Clientes</button>
+            <button onclick="window.location.href='lembretes.html'">Gerenciamento de Lembretes</button>
+        </div>
+    </div>
+
+    <div id="modalEdicao" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Editar Lembrete</h2>
+            <form id="formModalMensagem" method="PUT">
+                <input type="hidden" id="mensagemIdModal">
+                
+                <label>Titulo:</label>
+                <input type="text" id="tituloModal" placeholder="Título da mensagem" required>
+                
+                <label>Mensagem:</label>
+                <input type="text" id="conteudoModal" placeholder="Conteúdo da mensagem" required>
+
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="./mensagens.js"></script>
+</html>

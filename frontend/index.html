@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Clientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gerenciamento de Clientes</h1>
+        
+        <!-- Formulário de Cadastro -->
+        <div class="form-container">
+            <form id="formCliente" method="POST">
+                <input type="text" placeholder="Nome" id="nome" required>
+                <input type="tel" placeholder="Telefone" id="telefone" required>
+                <input type="email" placeholder="Email" id="email">
+                <input type="text" placeholder="Observação" id="obs">
+                <button type="submit">Gerenciamento de Clientes</button>
+            </form>
+        </div>
+        
+        <!-- Tabela de Clientes -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Observação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="listaClientes">
+                    <!-- Clientes serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Botões de Navegação -->
+        <div class="nav-buttons">
+            <button onclick="window.location.href='lembretes.html'">Gerenciamento de Lembretes</button>
+            <button onclick="window.location.href='mensagens.html'">Gerenciamento de Mensagens</button>
+        </div>
+    </div>
+
+    <div id="modalEdicao" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Editar Cliente</h2>
+            <form id="formModalCliente" method="PUT">
+                <input type="hidden" id="clienteIdModal">
+                
+                <label>Cliente:</label>
+                <input type="text" id="nomeModal" required>
+                
+                <label>Telefone:</label>
+                <input type="text" id="telefoneModal" required>
+                
+                <label>Email:</label>
+                <input type="text" id="emailModal" required>
+
+                <label>Obs:</label>
+                <input type="text" id="obsModal">
+
+                
+
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="./clientes.js"></script>
+</html>
